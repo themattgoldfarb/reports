@@ -1,0 +1,36 @@
+.sectionTitle {
+    height: 35px;
+    background-color: #EEE;
+}
+section,.section{
+    background-color: ##FFF;
+    height: 100%;
+}
+.sectionBody{
+    height: 100%;
+    background-color: #FFF;
+}
+.titleEditButton, .titleEditDoneButton{
+    cursor: pointer;
+}
+.titleEdit input{
+    color:#000;
+}
+.sectionTitle .titleEdit{
+    display:none;
+}
+.sectionTitle.edit .titleEdit{
+    display:block;
+}
+.sectionTitle .titleValue{
+    display:block;
+}
+.sectionTitle.edit .titleValue{
+    display:none;
+}
+.sectionTitle .titleEditButton{
+    display: none;
+}
+.sectionTitle:hover .titleEditButton{
+    display:inline-block;
+}

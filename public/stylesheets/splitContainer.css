@@ -1,0 +1,69 @@
+body{
+    height:100%;
+    width:100%;
+}
+html{
+    height:100%;
+    width:100%;
+}
+
+
+.mainContainer{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+.outerSplit{
+    height:100%;
+    width:100%;
+    position: absolute;
+}
+
+.innerSplit {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #000000;
+    position: absolute;
+}
+
+.topSplit{
+    position:absolute;
+    width:100%;
+    height:50%;
+    top:0%;
+}
+.bottomSplit{
+    position:absolute;
+    width:100%;
+    height:50%;
+    bottom:0%;
+}
+.leftSplit{
+    position:absolute;
+    width:50%;
+    height:100%;
+    left:0%;
+    background-color: #f00;
+}
+.rightSplit{
+    position:absolute;
+    width:50%;
+    height:100%;
+    right:0%;
+    background-color: #0f0;
+}
+.horizontalSplitBar{
+    height:10px;
+    background-color: #000;
+    width:100%;
+    position:absolute;
+    top:50%;
+}
+.verticalSplitBar{
+    width:10px;
+    background-color: #000;
+    height:100%;
+    position:absolute;
+    left:50%;
+}

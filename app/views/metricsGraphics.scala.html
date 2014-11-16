@@ -1,0 +1,37 @@
+@import viewModels.DataViewModel
+@(dataViewModel: DataViewModel)
+
+@main("Welcome to Play"){
+    <link href="@routes.Assets.at("bootstrap/css/bootstrap.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("metrics-graphics-1.0.0/css/metricsgraphics.css")" rel="stylesheet">
+
+    <script src="@routes.Assets.at("javascripts/jquery-1.9.1.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@routes.Assets.at("d3/d3.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("metrics-graphics-1.0.0/js/lib/highlight.pack.js")"></script>
+    <script src="@routes.Assets.at("metrics-graphics-1.0.0/js/lib/ace.js")"></script>
+    <script src="@routes.Assets.at("metrics-graphics-1.0.0/js/lib/mode-javascript.js")"></script>
+    <script src="@routes.Assets.at("metrics-graphics-1.0.0/js/lib/worker-javascript.js")"></script>
+    <script src="@routes.Assets.at("metrics-graphics-1.0.0/js/metricsgraphics.js")"></script>
+}{
+    <div id="ufo-sightings"></div>
+
+    <script type = "text/javascript">
+        d3.json("@routes.Assets.at("metrics-graphics-1.0.0/data/ufo-sightings.json")",
+            function(data){
+                data_graphic({
+                    title: "UFO Sightings",
+                    description: "Yearly UFO sightings from the year 1945 to 2010.",
+                    data: data,
+                    width: 650,
+                    height: 150,
+                    target: '#ufo-sightings',
+                    x_accessor: 'year',
+                    y_accessor: 'sightings',
+                    markers: [{'year': 1964, 'label': '"The Creeping Terror" released'}]
+                });
+            }
+        );
+    </script>
+
+}

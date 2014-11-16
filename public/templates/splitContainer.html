@@ -1,0 +1,21 @@
+<div class="outerSplit level-{{split.level}} gridId-{{split.gridId}} direction-{{split.direction}}">
+    <div ng-if="split.direction=='none'">
+        <button type="button" ng-click="splitVertical(split)" class="btn btn-default">Split Vertical</button>
+        <button type="button" ng-click="splitHorizontal(split)" class="btn btn-default">Split Horizontal</button>
+        <button type="button" class="btn btn-default">{{split.direction}}</button>
+    </div>
+
+    <div ng-transclude></div>
+    <div ng-repeat="split in split.splits">
+        <div splitcontainer class="{{split.side}}Split"></div>
+    </div>
+
+
+    <div ng-if="split.direction=='vertical'" class="verticalSplitBar"
+            resizer="vertical"
+            resizer-gridId="{{split.gridId}}"/>
+
+    <div ng-if="split.direction=='horizontal'" class="horizontalSplitBar"
+            resizer="horizontal"
+            resizer-gridId="{{split.gridId}}"/>
+</div>
